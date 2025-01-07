@@ -8,7 +8,7 @@ The dataset used in this project is the Restaurant Reviews dataset. It contains 
 
 # Pre-trained Model
 The pre-trained model chosen for the task was:
-DistilBERT: distilbert-base-uncased-finetuned-sst-2-english
+DistilBERT: distilbert-base-uncased-finetuned-sst-2-english.
 Reason: DistilBERT is a lightweight transformer-based model fine-tuned for sentiment classification on the SST-2 dataset, making it a suitable choice for this project.
 Additionally, RoBERTa (roberta-base) was fine-tuned on the cleaned dataset for a comparative study on performance.
 
@@ -19,34 +19,34 @@ Precision, Recall, and F1-Score: Important metrics for binary classification, es
 Confusion Matrix: To visualize the classification errors.
 
 DistilBERT Results:
-Accuracy: 90%
-F1-Score: 90%
+Accuracy: 90%,
+F1-Score: 90%,
 
 Confusion Matrix:
-True Positives: 450
-True Negatives: 452
-False Positives: 48
-False Negatives: 50
+True Positives: 450,
+True Negatives: 452,
+False Positives: 48,
+False Negatives: 50,
 
 RoBERTa Fine-Tuned Results:
-Accuracy: 85%
-F1-Score: 85%
+Accuracy: 85%,
+F1-Score: 85%,
 
 Confusion Matrix:
-True Positives: 80
-True Negatives: 91
-False Positives: 12
-False Negatives: 17
+True Positives: 80,
+True Negatives: 91,
+False Positives: 12,
+False Negatives: 17,
 
 # Hyperparameters
 
 Key hyperparameters used during the RoBERTa fine-tuning process:
-Learning Rate: 2e-5
-Batch Size: 16
-Epochs: 3
-Max Sequence Length: 512
-Weight Decay: 0.01
-Optimizer: AdamW
+Learning Rate: 2e-5,
+Batch Size: 16,
+Epochs: 3,
+Max Sequence Length: 512,
+Weight Decay: 0.01,
+Optimizer: AdamW.
 These hyperparameters were chosen to balance training efficiency and performance.
 
 Training and Evaluation Process:
