@@ -26,13 +26,26 @@ RoBERTa works effectively even with moderate-sized datasets, making it an ideal 
 We fine-tuned the pre-trained RoBERTa model on our dataset, adapting it to classify reviews into three sentiment categories using the Hugging Face Transformers library.
 
 # Performance Metrics
-To assess how well the model performs, we used the following metrics:
-Accuracy: The percentage of correctly predicted sentiment labels.
-F1-Score: A metric that combines precision and recall, particularly useful when dealing with imbalanced classes.
-Confusion Matrix: This gives a clear visualization of how well the model is predicting each sentiment class (positive, neutral, and negative).
+For label 0 (negative):
+Precision: 0.90 – 90% of the time when the model predicted NEGATIVE, it was correct.
+Recall: 0.90 – 90% of the actual negative sentiments were correctly identified.
+F1-score: 0.90 – This is the combined metric of precision and recall.
 
-Sample results from the model's performance:
-....
+For label 1 (positive):
+Similar metrics of 0.90, indicating that the model performs equally well for both positive and negative sentiments.
+
+Confusion Matrix:
+
+The confusion matrix shows how well the model is performing:
+True Negatives (452): Correctly predicted negative sentiments.
+False Positives (48): Predicted positive when the sentiment was actually negative.
+False Negatives (50): Predicted negative when the sentiment was actually positive.
+True Positives (450): Correctly predicted positive sentiments.
+
+Overall, the model is performing well:
+The accuracy is 90%, meaning that 90% of the time, the model predicts the correct sentiment.
+The F1-score and other metrics are balanced between positive and negative classes, indicating the model doesn't favor one sentiment over the other.
+
 # Hyperparameters
 
 The following hyperparameters played a key role in optimizing the model:
@@ -45,9 +58,37 @@ Weight Decay (0.01): Weight decay was used to regularize the model, preventing o
 Training and Evaluation Process:
 Data Splitting: The dataset was split into an 80% training set and a 20% validation set.
 Tokenization: The reviews were tokenized using RoBERTa’s tokenizer, which converts the text into tokens that the model can understand.
-Trainer: We used Hugging Face’s Trainer class, which streamlines the training and evaluation process, handling the training loop and logging.
+Trainer: Used Hugging Face’s Trainer class, which streamlines the training and evaluation process, handling the training loop and logging.
 Evaluation Strategy: The model was evaluated after each epoch to monitor progress, and logs were generated during training for easier tracking.
+
+Results: 
+For label 0 (negative):
+Precision: 0.84 – 84% of the time when the model predicted NEGATIVE, it was correct.
+Recall: 0.88 – 88% of the actual negative instances were correctly identified.
+F1-Score: 0.86 – This is the combined metric of precision and recall for label 0, indicating a strong performance.
+
+For label 1 (positive):
+Precision: 0.87 – 87% of the time when the model predicted POSITIVE, it was correct.
+Recall: 0.82 – 82% of the actual positive instances were correctly identified.
+F1-Score: 0.85 – This is the combined metric of precision and recall for label 1, showing that the model performs well for the positive class as well.
+
+Confusion Matrix:
+The confusion matrix gives us a detailed breakdown of the model's performance:
+True Negatives (91): Correctly predicted negative instances (label 0).
+False Positives (12): Predicted positive when the actual label was negative.
+False Negatives (17): Predicted negative when the actual label was positive.
+True Positives (80): Correctly predicted positive instances (label 1).
+
+Overall Model Performance:
+Accuracy: 0.85 – 85% of the time, the model correctly predicted the sentiment.
+Macro Average:
+Precision: 0.86
+Recall: 0.85
+F1-Score: 0.85
+The metrics for both classes (negative and positive) are close, showing that the model is balanced and does not favor one class over the other.
+
 
 # Relevant Links
 https://huggingface.co/puranik/LLM
 https://www.kaggle.com/datasets/mawro73/restaurant-reviews-for-nlp?resource=download
+Model Results - https://drive.google.com/file/d/1yofFDytjDqGvvfDX3BQD3xJ3X9ZK6SDI/view?usp=sharing
